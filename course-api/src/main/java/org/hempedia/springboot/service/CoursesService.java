@@ -17,4 +17,13 @@ public class CoursesService {
 	{
 		return coursesDao.getCoures();
 	}
+	
+	public CoursesEntity getCourse(Integer id)
+	{
+		return (coursesDao.getCoures()).stream().filter(f -> f.getCourseId().equals(id)).findFirst().get();
+	}
+
+	public void addTopic(CoursesEntity coursesEntity) {
+		coursesDao.addCourse(coursesEntity);
+	}
 }
