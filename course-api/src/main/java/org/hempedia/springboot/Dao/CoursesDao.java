@@ -7,4 +7,5 @@ import org.hempedia.springboot.model.CoursesEntity;
 public interface CoursesDao {
 
 	public List<CoursesEntity> getCoures();
+	public void addCourse(CoursesEntity coursesEntity);
 }
