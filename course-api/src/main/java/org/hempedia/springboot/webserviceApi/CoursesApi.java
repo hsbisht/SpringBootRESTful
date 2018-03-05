@@ -29,9 +29,21 @@ public class CoursesApi {
 		return coursesService.getCourse(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST,value="/course")
+	@RequestMapping(method=RequestMethod.POST,value="/courses")
 	public void addCourse(@RequestBody CoursesEntity coursesEntity)
 	{
-		coursesService.addTopic(coursesEntity);
+		coursesService.addCourse(coursesEntity);
+	}
+	
+	@RequestMapping(method=RequestMethod.PUT,value="/courses/{id}")
+	public void updateCourse(@RequestBody CoursesEntity coursesEntity, @PathVariable Integer id)
+	{
+		coursesService.updateCourse(id, coursesEntity);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE,value="/courses/{id}")
+	public void deleteCourse(@PathVariable Integer id)
+	{
+		coursesService.deleteCourse(id);
 	}
 }
